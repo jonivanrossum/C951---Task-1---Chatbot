@@ -11,9 +11,9 @@
 	        PRETTY GOOD LT SLASH TEXT GT LT POSTBACK GT PRETTY GOOD LT 
 	        SLASH POSTBACK GT LT SLASH REPLY GT</that>
 	        <template><delay>1</delay>
-	            Perfect! Well <get name="name" />, it sure looks to me like 
-	            you should pursue a career in AI and be an 
-	            Artificial Intelligence & Machine Learning Engineer.
+	            Perfect! Well <get name="name" />, it seems to me you should 
+	            pursue a career as an Artificial Intelligence 
+	            and Machine Learning Engineer.
 	            <srai>GOODBYE</srai>
 	        </template>
         </category>
