@@ -2,21 +2,6 @@
 <aiml version="2.0">
 	<!-- insert your AIML categories here -->
 	
-	<category>
-	    <pattern>MATH</pattern>
-	    <that>LT SLASH TEXT GT LT POSTBACK GT GRAPHIC DESIGN LT SLASH 
-	    POSTBACK GT LT SLASH REPLY GT</that>
-	    <template>
-	        <think><set name="topic">softwaredev</set></think>
-            <srai>QUESTION</srai>
-	    </template>
-    </category>
-    
-    <category>
-        <pattern>I LOVE MATH</pattern>
-        <template><srai>MATH</srai></template>
-    </category>
-	
 	<topic name="softwaredev">
 	    
 	    <category>

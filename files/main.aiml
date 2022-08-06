@@ -144,4 +144,47 @@
       </template>
   </category>
   
+  	<category>
+	    <pattern>MATH</pattern>
+	    <that>LT SLASH TEXT GT LT POSTBACK GT GRAPHIC DESIGN LT SLASH 
+	    POSTBACK GT LT SLASH REPLY GT</that>
+	    <template>
+	        <think><set name="topic">softwaredev</set></think>
+            <srai>QUESTION</srai>
+	    </template>
+    </category>
+    
+    <category>
+        <pattern>I LOVE MATH</pattern>
+        <template><srai>MATH</srai></template>
+    </category>
+    
+    <category>
+	    <pattern>GRAPHIC DESIGN</pattern>
+	    <template>
+	        <think><set name="topic">webdev</set></think>
+	        <srai>QUESTION</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>^ GRAPHIC ^</pattern>
+	    <that>LT SLASH TEXT GT LT POSTBACK GT GRAPHIC DESIGN LT SLASH POSTBACK 
+	    GT LT SLASH REPLY GT</that>
+	    <template>
+	        <srai>GRAPHIC DESIGN</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>^ DESIGN ^</pattern>
+	    <that>LT SLASH TEXT GT LT POSTBACK GT GRAPHIC DESIGN LT SLASH POSTBACK 
+	    GT LT SLASH REPLY GT</that>
+	    <template>
+	        <srai>GRAPHIC DESIGN</srai>
+	    </template>
+    </category>
+    
+    
+  
 </aiml>
