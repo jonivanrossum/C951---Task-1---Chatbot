@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+	<category>
+	    <pattern>MATH</pattern>
+	    <that>LT SLASH TEXT GT LT POSTBACK GT GRAPHIC DESIGN LT SLASH 
+	    POSTBACK GT LT SLASH REPLY GT</that>
+	    <template>
+	        <think><set name="topic">softwaredev</set></think>
+            <srai>QUESTION</srai>
+	    </template>
+    </category>
+    
+    <category>
+        <pattern>I LOVE MATH</pattern>
+        <template><srai>MATH</srai></template>
+    </category>
+	
+	<topic name="softwaredev">
+	    
+	    <category>
+	        <pattern>QUESTION</pattern>
+	        <template><delay>1</delay>
+	            I see. Do you enjoy writing algorithms?
+	            <reply>
+	                <text>All day every day!</text>
+	                <postback>ALL DAY EVERY DAY</postback>
+	            </reply>
+	            <reply>
+	                <text>Meh, it's okay...</text>
+	                <postback>SORT OF</postback>
+                </reply>
+	        </template>
+        </category>
+        
+        <category>
+            <pattern>ALL DAY EVERY DAY</pattern>
+            <that>LT SLASH TEXT GT LT POSTBACK GT SORT OF LT SLASH 
+            POSTBACK GT LT SLASH REPLY GT</that>
+            <template><delay>1</delay>
+                That is amazing! How would you rate your understanding of 
+                data structures such as stacks, queues, graphs, trees, 
+                and multi-dimensional arrays?
+                <reply>
+                    <text>Excellent!</text>
+                    <postback>EXCELLENT</postback>
+                </reply>
+                <reply>
+                    <text>Pretty good</text>
+                    <postback>PRETTY GOOD</postback>
+                </reply>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>^ DAY ^</pattern>
+            <that> LT SLASH TEXT GT LT POSTBACK GT SORT OF LT SLASH POSTBACK 
+            GT LT SLASH REPLY GT</that>
+            <template>
+                <srai>ALL DAY EVERY DAY</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>EXCELLENT</pattern>
+            <that>LT SLASH TEXT GT LT POSTBACK GT EXCELLENT LT SLASH POSTBACK 
+            GT LT SLASH REPLY GT LT REPLY GT LT TEXT GT PRETTY GOOD LT SLASH 
+            TEXT GT LT POSTBACK GT PRETTY GOOD LT SLASH POSTBACK GT LT SLASH 
+            REPLY GT</that>
+            <template>
+                <think><set name="topic">aiengineer</set></think>
+                <srai>QUESTION</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>PRETTY GOOD</pattern>
+            <that>LT SLASH TEXT GT LT POSTBACK GT EXCELLENT LT SLASH POSTBACK 
+            GT LT SLASH REPLY GT LT REPLY GT LT TEXT GT PRETTY GOOD LT SLASH 
+            TEXT GT LT POSTBACK GT PRETTY GOOD LT SLASH POSTBACK GT LT SLASH 
+            REPLY GT</that>
+            <template><delay>1</delay>
+                I got just the thing for you, <get name="name"/>. You should 
+                be a Software Developer!
+                <srai>GOODBYE</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>PRETTY GOOD</pattern>
+            <that>LT SLASH TEXT GT LT POSTBACK GT NO LT SLASH POSTBACK GT 
+            LT SLASH REPLY GT</that>
+            <template><delay>1</delay>
+                I got just the thing for you, <get name="name"/>. You should 
+                be a Software Developer!
+                <srai>GOODBYE</srai>
+            </template>
+        </category>
+       
+        
+        <category>
+            <pattern>^ OKAY</pattern>
+            <that>LT SLASH TEXT GT LT POSTBACK GT EXCELLENT LT SLASH POSTBACK 
+            GT LT SLASH REPLY GT LT REPLY GT LT TEXT GT PRETTY GOOD LT SLASH 
+            TEXT GT LT POSTBACK GT PRETTY GOOD LT SLASH POSTBACK GT LT SLASH 
+            REPLY GT</that>
+            <template><srai>PRETTY GOOD</srai></template>
+        </category>
+        
+        <category>
+            <pattern>SORT OF</pattern>
+            <that>LT SLASH TEXT GT LT POSTBACK GT SORT OF LT SLASH POSTBACK 
+            GT LT SLASH REPLY GT</that>
+            <template>
+                <think><set name="topic">networkarchitect</set></think>
+                <srai>QUESTION</srai>
+            </template>
+        </category>
+	    
+	</topic>
+	
+	
+</aiml>

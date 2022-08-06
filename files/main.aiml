@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<category>
+      <pattern>^ CREATED YOU ^</pattern>
+      <template><delay>1</delay>
+          How nice of you to ask! <split/> I was created in August of 2022
+          by the brilliant pianist, composer, and computer scientist Johannes Van Rossum
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HI</pattern>
+      <template><delay>1</delay>
+          <random>
+              <li>Hello there! <br/><br/>My name is <sentence><bot name="name" />
+              </sentence> and I am a 
+              Virtual Career Advisor. I can help you identify the perfect job 
+              in the computing field that matches your skills and interests.
+              <br/><br/>Would you like to proceed?</li>
+              <li>Hola!<br/><br/>I am <sentence><bot name="name" /></sentence>, 
+              a Virtual Career Advisor. 
+              <br/><br/>Are you ready to identify a great career path that
+              suits your skills and interests?</li>
+              <li>Well hello and a good day to you!<br/><br/>
+              My name is <sentence><bot name="name" /></sentence>, 
+              a Virtual Career Advisor, here to help you find
+              a career path that fits your interests and skills.<br/><br/>
+              Are you ready to proceed?</li>
+          </random>
+          <reply>
+              <text>Yes</text>
+              <postback>YES</postback>
+          </reply>
+          <reply>
+              <text>No</text>
+              <postback>NO</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HELLO ^</pattern>
+      <template>
+          <srai>HI</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HOLA ^</pattern>
+      <template>
+          <srai>HI</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HALLO ^</pattern>
+      <template>
+          <srai>HI</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>^ START ^</pattern>
+      <template>
+          <srai>HI</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>^ BEGIN ^</pattern>
+      <template>
+          <srai>HI</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>HI ^</pattern>
+      <template>
+          <srai>HI</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>YES</pattern>
+      <that>LT REPLY GT LT TEXT GT YES LT SLASH TEXT GT LT POSTBACK GT YES 
+          LT SLASH POSTBACK GT LT SLASH REPLY GT LT REPLY GT LT TEXT GT NO LT 
+          SLASH TEXT GT LT POSTBACK GT NO LT SLASH POSTBACK GT LT SLASH REPLY 
+          GT</that>
+      <template>
+          <delay>1</delay>
+      Very well. Let's start by telling me your name?
+      </template>
+  </category>
+  
+  <category>
+      <pattern>NO</pattern>
+      <that>LT REPLY GT LT TEXT GT YES LT SLASH TEXT GT LT POSTBACK GT YES 
+          LT SLASH POSTBACK GT LT SLASH REPLY GT LT REPLY GT LT TEXT GT NO LT 
+          SLASH TEXT GT LT POSTBACK GT NO LT SLASH POSTBACK GT LT SLASH REPLY 
+          GT</that>
+      <template>
+          <delay>1</delay>
+          That is too bad. It was a pleasure meeting you today.
+          <srai>GOODBYE</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>MY NAME IS *</pattern>
+      <template><delay>1</delay>
+          Nice to meet you, <set name = "name"><sentence><star /></sentence></set>. 
+          <br/>
+          Next, I will help you find the perfect career path by asking you a few questions. 
+          <br/><delay>1</delay>
+          Do you like math or would you prefer graphic design?
+          <reply>
+              <text>I love math!</text>
+              <postback>MATH</postback>
+          </reply>
+          <reply>
+              <text>I like graphic design more.</text>
+              <postback>GRAPHIC DESIGN</postback>
+          </reply>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>*</pattern>
+      <that>
+          LET US START BY TELLING ME YOUR NAME
+      </that>
+      <template>
+          <srai>MY NAME IS <star /></srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>IT IS *</pattern>
+      <that>
+          LET US START BY TELLING ME YOUR NAME
+      </that>
+      <template>
+          <srai>MY NAME IS <star /></srai>
+      </template>
+  </category>
+  
+</aiml>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template><delay>1</delay>
+        I'm so sorry. I didn't understand what you meant to say.
+    </template>
+  </category>
+  
+  <category>
+      <pattern>*</pattern>
+      <that>
+          I DID NOT UNDERSTAND WHAT YOU MEANT TO SAY
+      </that>
+      <template><delay>1</delay>
+          I am so sorry. Let us start over. This time, please try to click on
+          the "reply" options, or type answers that make sense,
+          to guide our conversation.
+          <srai>HI</srai>
+      </template>
+  </category>
+  
+  <category>
+      <pattern>GOODBYE</pattern>
+      <template>
+          <delay>1</delay><split /> You can now close the chat or 
+          start a new conversation.
+          <delay>1</delay><split /> Good luck and goodbye!
+      </template>
+  </category>
+  
+
+</aiml>
+

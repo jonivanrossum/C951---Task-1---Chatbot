@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+	<topic name="aiengineer">
+	    
+	    <category>
+	        <pattern>QUESTION</pattern>
+	        <that>LT SLASH TEXT GT LT POSTBACK GT EXCELLENT LT SLASH 
+	        POSTBACK GT LT SLASH REPLY GT LT REPLY GT LT TEXT GT 
+	        PRETTY GOOD LT SLASH TEXT GT LT POSTBACK GT PRETTY GOOD LT 
+	        SLASH POSTBACK GT LT SLASH REPLY GT</that>
+	        <template><delay>1</delay>
+	            Perfect! Well <get name="name" />, it sure looks to me like 
+	            you should pursue a career in AI and be an 
+	            Artificial Intelligence & Machine Learning Engineer.
+	            <srai>GOODBYE</srai>
+	        </template>
+        </category>
+        
+    </topic>
+	
+</aiml>

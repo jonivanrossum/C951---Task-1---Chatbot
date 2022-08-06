@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+	<topic name="networkarchitect">
+	    
+	    <category>
+	        <pattern>QUESTION</pattern>
+	        <template><delay>1</delay>
+	            Got it. Would you say you're more familiar with 
+	            Operating Systems, or are you the type to design networks and
+	            work with hardware?
+	            <reply>
+	                <text>Operating Systems are my thing!</text>
+	                <postback>OS</postback>
+                </reply>
+                <reply>
+                    <text>I love working with hardware and networks!</text>
+                    <postback>NETWORKS</postback>
+                </reply>
+	        </template>
+        </category>
+	    
+	    <category>
+	        <pattern>NETWORKS</pattern>
+	        <that>LT SLASH TEXT GT LT POSTBACK GT NETWORKS LT SLASH POSTBACK 
+	        GT LT SLASH REPLY GT</that>
+	        <template><delay>1</delay>
+	            In that case, <get name="name" />, your ideal career path would
+	            be a job as a Network Architect.
+	            <srai>GOODBYE</srai>
+	        </template>
+        </category>
+	    
+	    <category>
+	        <pattern>OS</pattern>
+	        <that>LT SLASH TEXT GT LT POSTBACK GT NETWORKS LT SLASH POSTBACK 
+	        GT LT SLASH REPLY GT</that>
+	        <template>
+	            <think><set name="topic">cysecanalyst</set></think>
+	            <srai>QUESTION</srai>
+	        </template>
+        </category>
+	    
+	</topic>
+	
+</aiml>

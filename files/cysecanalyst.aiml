@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+	<topic name = "cysecanalyst">
+	    
+	    <category>
+	        <pattern>QUESTION</pattern>
+	        <template><delay>1</delay>
+	            All right, let's see. Last question: <br/><br/>
+	            Do you think you have what it takes to catch hackers and prevent
+	            system intrusion attempts?
+	            <reply>
+	                <text>Most definitely!</text>
+	                <postback>DEFINITELY</postback>
+                </reply>
+                <reply>
+                    <text>Probably not...</text>
+                    <postback>NO</postback>
+                </reply>
+	        </template>
+        </category>
+        
+        <category>
+            <pattern>DEFINITELY</pattern>
+            <template><delay>1</delay>
+                In that case, <get name="name" />,you should definitely 
+                pursue a career as a Cybersecurity Analyst!
+                <srai>GOODBYE</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>NO</pattern>
+            <template><delay>1</delay>
+                No worries.
+                <think><set name="topic">softwaredev</set></think>
+                <srai>PRETTY GOOD</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>YES</pattern>
+            <template>
+                <srai>DEFINITELY</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>I THINK SO</pattern>
+            <template>
+                <srai>DEFINITELY</srai>
+            </template>
+        </category>
+	    
+	</topic>
+	
+</aiml>

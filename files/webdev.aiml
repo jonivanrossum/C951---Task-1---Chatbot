@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	
+	<category>
+	    <pattern>GRAPHIC DESIGN</pattern>
+	    <template>
+	        <think><set name="topic">webdev</set></think>
+	        <srai>QUESTION</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>^ GRAPHIC ^</pattern>
+	    <that>LT SLASH TEXT GT LT POSTBACK GT GRAPHIC DESIGN LT SLASH POSTBACK 
+	    GT LT SLASH REPLY GT</that>
+	    <template>
+	        <srai>GRAPHIC DESIGN</srai>
+	    </template>
+    </category>
+    
+    <category>
+	    <pattern>^ DESIGN ^</pattern>
+	    <that>LT SLASH TEXT GT LT POSTBACK GT GRAPHIC DESIGN LT SLASH POSTBACK 
+	    GT LT SLASH REPLY GT</that>
+	    <template>
+	        <srai>GRAPHIC DESIGN</srai>
+	    </template>
+    </category>
+    
+    <topic name="webdev">
+        
+        <category>
+            <pattern>QUESTION</pattern>
+            <template><delay>1</delay>
+                Excellent choice :) When it comes to design skills for UI's, for
+                example, do you like to build them from the ground up until 
+                it is perfect, or are you satisfied with just a basic looking UI?
+                <reply>
+                    <text>My UI's have it all!</text>
+                    <postback>WEBDEVELOPER</postback>
+                </reply>
+                <reply>
+                    <text>Basic UI is good enough</text>
+                    <postback>BASIC</postback>
+                </reply>
+            </template>
+        </category>
+        
+        <category>
+	        <pattern>WEBDEVELOPER</pattern>
+	        <template><delay>1</delay>
+	        I love that too, <get name="name"></get>. You 
+	        could be an excellent Web Developer!
+	        <srai>GOODBYE</srai>
+	        </template>
+	    </category>
+    
+    <category>
+        <pattern>BASIC</pattern>
+        <template>
+            <think><set name="topic">softwaredev</set></think>
+            <srai>QUESTION</srai>
+        </template>
+    </category>
+    
+    </topic>
+    
+</aiml>
+
